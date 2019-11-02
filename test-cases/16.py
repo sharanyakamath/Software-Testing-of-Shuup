@@ -1,6 +1,5 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import Select
 import time
 browser = webdriver.Chrome()
 browser.get("http://127.0.0.1:8000/sa/login/?next=/sa/") 
@@ -11,7 +10,8 @@ username.send_keys("palak")
 password.send_keys("palak123")
 login_attempt = browser.find_element_by_xpath("//*[@type='submit']")
 login_attempt.submit()
-browser.get("http://127.0.0.1:8000/sa/manufacturers/new/") 
+browser.get("http://127.0.0.1:8000/sa/carousels/new/#advanced-options-section")
 time.sleep(1)
-browser.find_element_by_xpath("//*[@id='id_name']").send_keys('Bob')
-browser.find_element_by_xpath("/html/body/div[1]/div[2]/div/div/div/form/div/div/button[1]").click()
+browser.find_element_by_xpath("//*[@id='id_base-image_width']").send_keys('1200')
+browser.find_element_by_xpath("//*[@id='id_base-image_height']").send_keys('600')
+browser.find_element_by_xpath("/html/body/div[1]/div[2]/div/div/div/form/div/div/button[1]").click() 
