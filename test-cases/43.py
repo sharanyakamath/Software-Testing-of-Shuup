@@ -11,3 +11,9 @@ password.send_keys("palak1")
 login_attempt = browser.find_element_by_xpath("//*[@type='submit']")
 login_attempt.submit()
 browser.get("http://127.0.0.1:8000/sa/manufacturers/")
+
+element = browser.find_element_by_tag_name('h1')
+if element.text == 'Manufacturers':
+    print("Pass")
+else:
+    print("Fail")
